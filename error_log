@@ -1,0 +1,16 @@
+[25-Feb-2015 07:30:57 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/prajwejq/public_html/project/index.php on line 140
+[25-Feb-2015 07:30:57 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/prajwejq/public_html/project/index.php on line 206
+[25-Feb-2015 07:30:57 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/prajwejq/public_html/project/index.php on line 219
+[25-Feb-2015 07:34:00 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/prajwejq/public_html/project/index.php on line 140
+[25-Feb-2015 07:34:00 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/prajwejq/public_html/project/index.php on line 206
+[25-Feb-2015 07:34:00 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/prajwejq/public_html/project/index.php on line 219
+[25-Feb-2015 07:35:09 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/prajwejq/public_html/project/index.php on line 140
+[25-Feb-2015 07:35:09 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/prajwejq/public_html/project/index.php on line 206
+[25-Feb-2015 07:35:09 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/prajwejq/public_html/project/index.php on line 219
+[25-Feb-2015 08:10:56 Etc/GMT] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/prajwejq/public_html/project/index.php on line 3
+[25-Feb-2015 08:13:55 Etc/GMT] PHP Fatal error:  Using $this when not in object context in /home/prajwejq/public_html/project/index.php on line 4
+[25-Feb-2015 08:22:11 Etc/GMT] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/prajwejq/public_html/project/index.php on line 9
+[25-Feb-2015 08:29:57 Etc/GMT] PHP Fatal error:  Call to a member function query() on a non-object in /home/prajwejq/public_html/project/index.php on line 16
+[25-Feb-2015 08:32:04 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/prajwejq/public_html/project/index.php on line 236
+[25-Feb-2015 08:32:04 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/prajwejq/public_html/project/index.php on line 249
+[25-Feb-2015 08:42:19 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/prajwejq/public_html/project/index.php on line 266

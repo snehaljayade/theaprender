@@ -1,0 +1,39 @@
+	
+	/*<?php
+$page = $_SERVER['PHP_SELF'];
+$sec = "10";
+?>
+<html>
+    <head>
+    <meta http-equiv="refresh" content="<?php echo $sec?>;URL='<?php echo $page?>'">
+    </head>
+    <body>
+    <?php
+        echo "Watch the page reload itself in 10 second!";
+    ?>
+    </body>
+</html>*/
+
+
+$page = $_SERVER['PHP_SELF'];
+	$sec = "1";
+	echo "<meta http-equiv='refresh' content=".$sec."URL=".$page.">";
+	$d1=getdate();
+	$hournew=$d1['hours'];
+	$hourfin=$hournew+1;
+	$minnew=$d1['minutes'];
+	$minfin=$minnew+0;
+	$secnew=$d1['seconds'];
+	$secfin=$secnew+0;
+	//echo $hournew.":".$minin.":".$secin;
+	$h1=$hourfin-$hournew;
+	$s1=$secfin-$secnew;
+	$m1=$minfin-$minnew;
+
+	/*if($s1<0) {
+		$s1+=60; }
+	if($s1>=(60-$secin)) {
+		$m1--;  }
+	if($m1<0) {
+		$m1++; }*/
+	echo $h1 . ":" . $m1 . ":" . $s1;

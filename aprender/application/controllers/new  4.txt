@@ -1,0 +1,30 @@
+<select id='gender' name='gender' width="20px">
+							 <option value='0' <?php echo set_select('gender', '0'); ?>>Male</option>
+                            <option value='1' <?php echo set_select('gender', '1'); 
+							if(($mem->gender)==1){
+							 echo "selected='true'";
+							 }
+							 ?>
+							 > Female</option> 
+                           
+                        </select>
+						
+						
+						
+		<div class='pure-control'>
+			<p>
+            <label for='member_address'>Address</label>
+            &nbsp;&nbsp;<?php echo $mem->member_address;?></p>
+        </div>
+		
+		<div class='pure-control'>
+			<p>
+            <label for='member_email_id'>Email</label>
+            &nbsp;&nbsp;<?php echo $mem->member_email_id;?></p>
+        </div>
+		
+		<div class='pure-control'>
+			<p>
+            <label for='contact_number'>Contact Number</label>
+            &nbsp;&nbsp;<?php echo $mem->contact_number;?></p>
+        </div>

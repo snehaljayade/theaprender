@@ -1,0 +1,11 @@
+<?php
+$date = new DateTime();
+
+			$config['upload_path'] ='E:\wamp\www\project2\assets\uploads';
+			$config['allowed_types'] = 'gif|jpg|png|txt|pdf|pptx|docs';
+			$config['file_name'] = $date->format('U')."_".$this->session->userdata('shop_id');
+			$config['max_size']	= '20000';
+			$config['max_width']  = '10024';
+			$config['max_height']  = '7680';
+			
+?>

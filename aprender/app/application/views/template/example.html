@@ -1,0 +1,208 @@
+<?php if(isset($message)&&$message!='') echo "<span class=\"message\">{$message}</span>"; 
+?><br><br>
+<?php
+    $attributes = array('class' => 'pure-form pure-form-stacked', 'id' => 'register');
+    echo form_open('register_user/info', $attributes);
+?>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrapValidator.css"/>
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrapValidator.js"></script>
+	</head>
+<body>
+<div class="container">
+	<div class="row">
+        <!-- form: -->
+        <section>
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="page-header">
+                    <h2>Registration Form</h2>
+                </div>
+				
+				<form id="defaultForm" class="form-horizontal" 
+						data-bv-message = "This value is not valid"
+                      data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                      data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                      data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+					
+					<div class="form-group">	        
+						<label class="col-lg-3 control-label">First Name</label>
+						<div class="col-lg-5">
+							<input value="<?php echo set_value('fname'); ?>" id="fname" name="fname" type="text" class ="form-control"  required data-bv-notempty-message="The first name is required and cannot be empty" placeholder="First Name" />
+						</div>
+					</div>	
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label">Middle Name</label>
+						<div class="col-lg-5">
+							<input value="<?php echo set_value('mname'); ?>" id="mname" name="mname" type="text" class="form-control" required data-bv-notempty-message="The middle name is required and cannot be empty" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label">last Name</label>
+						<div class="col-lg-5">
+							<input value="<?php echo set_value('lname'); ?>" id="mname" name="lname" type="text" class="form-control" required data-bv-notempty-message="The last name is required and cannot be empty" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+                        <label class="col-lg-3 control-label">Gender</label>
+                        <div class="col-lg-5">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="gender" value="0" <?php echo set_select('gender', '0', TRUE); ?> required data-bv-notempty-message="The gender is required" /> Male
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="gender" value="1" <?php echo set_select('gender', '1', TRUE); ?> /> Female
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div>
+					
+					<div class="form-group">
+                        <label class="col-lg-3 control-label">date of Birth</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" name="birthday" data-bv-date="false" data-bv-date-format="YYYY/MM/DD" data-bv-date-message="The birthdate is not valid" value="<?php echo set_value('dob'); ?>" /> (YYYY/MM/DD)
+                        </div>
+                    </div>
+				
+					<div class="form-group">
+						<label class="col-lg-3 control-label">Address</label>
+						<div class="col-lg-5">
+							<input value="<?php echo set_value('member_address'); ?>" id="member_address" name="member_address" type="text" class="form-control" placeholder="Address"/>
+						</div>
+					</div>
+					
+					<div class="form-group">	
+						<label class="col-lg-3 control-label">Contact Number</label>
+						<div class="col-lg-5">
+							<input value="<?php echo set_value('contact_number'); ?>" id="contact_number" name="contact_number" type="text" class="form-control" placeholder=""/>
+						</div>
+					</div>
+					
+					<div class="form-group">
+                        <label class="col-lg-3 control-label">Email address</label>
+                        <div class="col-lg-5">
+                            <input class="form-control" name="email" type="email" data-bv-emailaddress-message="The input is not a valid email address"  value="<?php echo set_value('member_email_id'); ?>" id="member_email_id"/>
+                        </div>
+					</div>
+					<div class="form-group">
+                        <label class="col-lg-3 control-label">Password</label>
+                        <div class="col-lg-5">
+                            <input type="password" class="form-control" name="password"
+                                   required data-bv-notempty-message="The password is required and cannot be empty"
+                                   data-bv-identical="true" data-bv-identical-field="confirmPassword" data-bv-identical-message="The password and its confirm are not the same"
+                                   data-bv-different="true" data-bv-different-field="username" data-bv-different-message="The password cannot be the same as username" id ="pass"/>
+                        </div>
+					</div>
+
+					<div class="form-group">
+                        <label class="col-lg-3 control-label">Retype password</label>
+                        <div class="col-lg-5">
+                            <input type="password" class="form-control" name="confirmPassword"
+                                   required data-bv-notempty-message="The confirm password is required and cannot be empty"
+                                   data-bv-identical="true" data-bv-identical-field="password" data-bv-identical-message="The password and its confirm are not the same"
+                                   data-bv-different="true" data-bv-different-field="username" data-bv-different-message="The password cannot be the same as username"id="cpass"/>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label" id="question">Security Question</label>
+						<div class="col-lg-5">
+							<div class="dropdown">
+							<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Security Question
+							<span class="caret"></span>
+							</button>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+									<li role="presentation">
+										<?php
+												foreach($security_questions as $sc){
+                                    echo "<option value=\"{$sc->security_question_id}\">{$sc->question}</option>";
+                                }
+                            ?>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>		
+                
+					<div class="form-group">
+						<label id="answer" class="col-lg-3 control-label">Answer</label>
+						<div class="col-lg-5">
+							<input value="<?php echo set_value('answer'); ?>" id="answer" name="answer" type="text" class="form-control" placeholder="">
+						</div>
+					</div>		
+					<div class="form-group">
+						<label class="col-lg-3 control-label" id="question">Role</label>
+						<div class="col-lg-5">
+							<div class="dropdown">
+							<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">Role
+							<span class="caret"></span>
+							</button>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+									<li role="presentation1">
+							<?php
+                                foreach($roles as $sc){
+                                    echo "<option value=\"{$sc->role_id}\">{$sc->role_name}</option>";
+                                }
+                            ?>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>		
+					<div class="form-group">
+						<label class="col-lg-3 control-label" id="question">College</label>
+						<div class="col-lg-5">
+							<div class="dropdown">
+							<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="true">College
+							<span class="caret"></span>
+							</button>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+									<li role="presentation2">
+									<?php
+                                foreach($colleges as $sc){
+                                    echo "<option value=\"{$sc->college_id}\">{$sc->college_name}</option>";
+                                }
+                            ?>
+									</li>	
+								</ul>
+							</div>
+						</div>
+					</div>		
+		
+		
+				<div class="form-group">
+					<label class="col-lg-3 control-label" id="description">Description</label>
+					<div class="col-lg-5">
+						<input value="<?php echo set_value('description'); ?>" id="description" class="form-control" name="description" type="text" placeholder="description if any..."/>
+					</div>
+				</div>
+		
+				<div class="form-group">
+                    <div class="col-lg-9 col-lg-offset-3">
+                        <button type="submit" class="btn btn-primary">Sign up</button>
+                    </div>
+                </div>
+			</form>
+		</div>
+   </section>
+   <!-- :form -->
+	</div>
+</div>
+				
+				<p>
+                    <?php echo validation_errors(); ?>
+                </p>
+            
+
+</body>
+</html>
