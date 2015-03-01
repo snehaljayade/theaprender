@@ -42,19 +42,25 @@ class Staff_home extends CI_Controller {
 		if($this->form_validation->run() == FALSE){
 		}
 		else{
+			$target_dir = realpath(APPPATH.'../uploads');
+			$target_file = $target_dir . basename($_FILES["userfile"]["name"]);
+			//$uploadOk = 1;
+			
 			if ( ! $this->upload->do_upload()){
 				$this->data['error'] = array('error' => $this->upload->display_errors());
-				$this->template->write_view('content', 'template/upload_notes', $this->data);
+				//$this->template->write_view('content', 'template/upload_notes', $this->data);
 			}
 			else{
 				//array of shop name and logo to be updated
 				$id=$this->session->userdata('username');
+				$type = pathinfo($target_file,PATHINFO_EXTENSION);
+				
 				$notes = array(
 					'title' => $this->input->post('title'),
 					'username' => $id,
 					'subject' => $this->input->post('subject'),
 					'date_time' => $date->format('d/m/Y'),
-					'file_location' => $date->format('dmy')."_".$this->session->userdata('username')
+					'file_location' => $date->format('dmyhms')."_".$this->session->userdata('username').".".$type
 					);
 				if($this->db->insert('notes', $notes)){
 					$this->data['notes'] = $this->db->get_where('notes', array('title'=>$this->input->post('title')))->result();

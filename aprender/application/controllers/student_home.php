@@ -48,7 +48,7 @@ class Student_home extends CI_Controller {
 	$this->data['notes_by'] = $this->db->get('new_member')->result();
 	for($i=0; $i<count($this->data['notes']); $i++){
 	$this->load->helper('download');
-    $data = file_get_contents(APPPATH . 'uploads/'.$this->data['notes'][$i]->file_location); 
+    $data = file_get_contents(realpath(APPPATH.'../uploads').'/'.$this->data['notes'][$i]->file_location); 
     $name = "";//$this->data['notes'][$i]->file_location;
     force_download( $data);
 	}
